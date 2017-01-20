@@ -272,10 +272,16 @@ h4 {
 }
 
 .speaker figure {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 	display:table;
 	width:100%;
+}
+.icon-drop-popup{
+	font-size: 20px;
+	position: absolute;
+	bottom: 10px;
+	left: 48%;
 }
 
 .speaker figcaption {
@@ -907,6 +913,41 @@ select {
   width: 10em;
   height: 10em;
 }
+/*Style POPUP Speaker*/
+.speaker{
+	position: relative;
+}
+.speaker-popup{
+	height: auto;
+	background: #FF5500;
+	position: absolute;
+	color: #fff;
+	padding:  20px;
+	z-index: 9999;
+	text-align: left;
+    width: 100%;
+    display: none;
+    margin-top: 5px; 
+}
+.speaker-popup h4{
+    font-family: 'sinkin_sans600_semibold';
+    font-size: 1em;
+}
+
+.speaker-popup.active{
+	display: block;
+}
+
+.speaker-popup p{
+	font-family:'sinkin_sans400_regular';
+	font-size:0.8em;
+	padding-bottom:0;
+	line-height:22px;
+}
+
+
+
+/*end*/
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);

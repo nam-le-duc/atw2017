@@ -149,8 +149,20 @@ jQuery(document).ready(function($) {
 
 
 $(window).load(function(){
-	
-	
+
+  	$(".speaker-2").click(function(){
+		var target = $('.speaker-popup');
+		if (target.hasClass('active')) {
+		target.removeClass('active').slideUp();
+		$(this).removeClass('active');
+		}
+		else {
+		$('.speaker-popup').removeClass('active').slideUp();
+		target.addClass('active').slideDown();
+		$(this).addClass('active');
+		}
+	});
+
 	//PARALLAX BACKGROUND
 	$(window).stellar({
 		horizontalScrolling: false,
@@ -241,6 +253,12 @@ $(window).load(function(){
 		}
 	
 	};
+
+
+
+
+	
+
 	
 
 	//GOOGLE MAP
