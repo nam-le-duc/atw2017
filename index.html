@@ -46,7 +46,37 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico">
+    <style type="text/css">
+        .topic1 {
+            display: block;
+            height: 65px;
+        }
+        .tooltip-inner {
+            max-width: 250px;
+            text-align:left;
+            padding:5px 10px 8px;
+            /*width: 350px; */
+        }
+        .sponsor-logo {
+            display:inline-block;
+            margin:10px 10px 15px;
+        }
+        .sponsor-logo img {
+            height:80px;
+        }
 
+        .speaker:nth-child(3n+1) { clear:none; }
+        .speaker:nth-child(4n+1) { clear:left; }
+
+        @media (min-width:767px) {
+            .speaker:nth-child(3n+1) { clear:left; }
+            .speaker:nth-child(4n+1) { clear:none; }
+        }
+        @media (min-width:991px) {
+            .speaker:nth-child(3n+1) { clear:none; }
+            .speaker:nth-child(4n+1) { clear:left; }
+        }
+    </style>
 
 </head>
 
@@ -214,7 +244,7 @@
             <div class="col-lg-10 col-lg-offset-1 text-center">
                 <h2 class="uppercase text-center">Registered speakers</h2>
                 <div class="row">
-                    <div class="speaker col-xs-8 col-sm-4 col-md-4 col-lg-4">
+                    <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
                         <figure>
                             <img class="img-responsive"
                                  src="https://media.licdn.com/media/AAEAAQAAAAAAAAjmAAAAJDM4MmRlNDNiLTIxNjctNGM1OS04YTZjLTY1ZTlkNDE1YzIxYQ.jpg"
@@ -228,34 +258,80 @@
                         </figure>
 
                         <h4>Pierre E. NEIS</h4>
-                        <span class="title">Lean Agile Coach<br>Agile Tour Beirut 2016<br>Agile Culture and Organisational Shift</span>
+                        <span class="title">Lean Agile Coach<br>Agile Tour Beirut 2016</span><br></span>
+                        <span class="topic1" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="Agile Animal Farm highlights the behaviours we all have and how we are interacting with others.
+At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development.">Topic: Agile Culture and Organisational Shift</span>
                     </div>
 
-                    <div class="speaker speaker-2 col-xs-8 col-sm-4 col-md-4 col-lg-4">
+                    <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
                         <figure>
                             <img class="img-responsive"
                                  src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPjAAAAJGE0NDU1NzZkLWI5MmYtNDY0YS05ZjBlLTNlNjNiZDNjOGFhMw.jpg"
                                  alt="">
                             <figcaption class="text-center">
                                 <h4>Eric LARAMÉE</h4>
-                                <p>Coach, trainer, speaker and founder of Agile Partnership</p>
-                                <p>Subject: <br>"Storytelling" as a transformation tool</p>
+                                <p>Coach and trainer</p>
                                 <a target="_blank" href="https://www.linkedin.com/in/erlaramee"><i
                                         class="fa fa-3x fa-linkedin-square"></i></a>
-                                <p><i class="fa fa-angle-double-down icon-drop-popup" aria-hidden="true"></i></p>
-
                             </figcaption>
-                            <div class="speaker-popup">
-                            <h4>Subject description</h4>
-                                <p>An interactive session where we will explore different narrative styles, each with a very specific goal such as initiating initiatives, transmitting values or promoting collaboration. Since many of us are not natural storytellers, we will have fun with some simple, effective tools that are perfectly adapted to the organization</p>
-                            </div>
                         </figure>
                         
                         <h4>Eric LARAMÉE</h4>
-                        <span class="title">Coach, trainer, speaker<br> and founder of Agile Partnership<br> Agile Tour Montréal 2016</span>
-                        
+                        <span class="title">Coach and trainer<br> Agile Tour Montréal 2016<br></span>
+                        <span class="topic1" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="An interactive session where we will explore different narrative styles, each with a very specific goal such as initiating initiatives, transmitting values or promoting collaboration. Since many of us are not natural storytellers, we will have fun with some simple, effective tools that are perfectly adapted to the organization">Topic: "Storytelling" as a transformation tool</span>
                     </div>
 
+                    <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <figure>
+                            <img class="img-responsive"
+                                 src="http://www.agilevietnam.org/conf/2016/img/Kimble-Ngo.png"
+                                 alt="">
+                            <figcaption class="text-center">
+                                <h4>Kimble NGO</h4>
+                                <p>Communication Guru</p>
+                                <a target="_blank" href="https://sg.linkedin.com/in/kimblengo"><i
+                                        class="fa fa-3x fa-linkedin-square"></i></a>
+                            </figcaption>
+                        </figure>
+
+                        <h4>Kimble NGO</h4>
+                        <span class="title">Communication Guru<br>Agile Tour Da Nang 2016<br></span>
+                        <span class="topic1" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="...">Topic: From IT Expert to Sought-After IT Guru</span>
+                    </div>
+                    <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <figure>
+                            <img class="img-responsive"
+                                 src="http://www.agilevietnam.org/conf/2016/img/Quang-Nguyen.png"
+                                 alt="">
+                            <figcaption class="text-center">
+                                <h4>Quang NGUYEN</h4>
+                                <p>Agile Coach</p>
+                                <a target="_blank" href="https://vn.linkedin.com/in/quangnd"><i
+                                        class="fa fa-3x fa-linkedin-square"></i></a>
+                            </figcaption>
+                        </figure>
+
+                        <h4>Quang NGUYEN</h4>
+                        <span class="title">Agile Coach<br>Agile Tour HCMC 2016<br></span>
+                        <span class="topic1" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="...">Topic: TCS</span>
+                    </div>
+                    <div class="speaker col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                        <figure>
+                            <img class="img-responsive"
+                                 src="http://agiletourvietnam.org/wp-content/uploads/2015/10/Cedric-400x400.png"
+                                 alt="">
+                            <figcaption class="text-center">
+                                <h4>Cedric MAINGUY</h4>
+                                <p>Managing Consultant</p>
+                                <a target="_blank" href="https://sg.linkedin.com/in/cedricmainguy"><i
+                                        class="fa fa-3x fa-linkedin-square"></i></a>
+                            </figcaption>
+                        </figure>
+
+                        <h4>Cedric MAINGUY</h4>
+                        <span class="title">Managing Consultant<br>Agile Tour Singapore 2015<br></span>
+                        <span class="topic1" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="...">Topic: TCS</span>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-10 col-lg-offset-1">
