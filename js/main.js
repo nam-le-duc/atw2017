@@ -150,18 +150,34 @@ jQuery(document).ready(function($) {
 
 $(window).load(function(){
 
-  	$(".speaker-2").click(function(){
-		var target = $('.speaker-popup');
+  	$(".speaker-eric").click(function(){
+		var target = $('.wrap-popup-eric');
 		if (target.hasClass('active')) {
-		target.removeClass('active').slideUp();
+		target.removeClass('active');
 		$(this).removeClass('active');
 		}
-		else {
-		$('.speaker-popup').removeClass('active').slideUp();
+		else{
+		$('.wrap-popup-eric').removeClass('active');
 		target.addClass('active').slideDown();
 		$(this).addClass('active');
 		}
 	});
+
+	$(".popup-close").click(function(){
+		
+		var target = $('.wrap-popup-eric');
+		if (target.hasClass('active')) {
+		target.removeClass('active');
+		$(this).removeClass('active');
+		}
+		else{
+		$('.wrap-popup-eric').removeClass('active');
+		target.addClass('active').slideDown();
+		$(this).addClass('active');
+		}
+	});
+
+
 
 	//PARALLAX BACKGROUND
 	$(window).stellar({
