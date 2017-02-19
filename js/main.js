@@ -198,14 +198,14 @@ $(window).load(function(){
 	})
 
 
- //  	$("#spk-eric").click(function(){
-	// 	var target = $('.wrap-popup-eric');
+ //  	$("#spk-montreal").click(function(){
+	// 	var target = $('.wrap-popup-montreal');
 	// 	if (target.hasClass('active')) {
 	// 	target.removeClass('active');
 	// 	$(this).removeClass('active');
 	// 	}
 	// 	else{
-	// 	$('.wrap-popup-eric').removeClass('active');
+	// 	$('.wrap-popup-montreal').removeClass('active');
 	// 	target.addClass('active').slideDown();
 	// 	$(this).addClass('active');
 	// 	}
@@ -213,13 +213,13 @@ $(window).load(function(){
 
 	// $(".popup-close").click(function(){
 		
-	// 	var target = $('.wrap-popup-eric');
+	// 	var target = $('.wrap-popup-montreal');
 	// 	if (target.hasClass('active')) {
 	// 	target.removeClass('active');
 	// 	$(this).removeClass('active');
 	// 	}
 	// 	else{
-	// 	$('.wrap-popup-eric').removeClass('active');
+	// 	$('.wrap-popup-montreal').removeClass('active');
 	// 	target.addClass('active').slideDown();
 	// 	$(this).addClass('active');
 	// 	}

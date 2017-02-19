@@ -1,6 +1,6 @@
 var speakers = {
-	pierre : {
-		id : "spk-pierre",
+	beirut : {
+		id : "spk-beirut",
 		img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAc3AAAAJDU5MTUyODVhLTA2NDAtNGU0Yi04Mjc5LWYxOTQ2N2E3OTFjYQ.jpg",
 		img_alt : "",
 		name : "Pierre E. NEIS",
@@ -10,11 +10,11 @@ var speakers = {
 		spk_title : "Lean Agile Coach<br>Agile Tour Beirut 2016",
 		original : "Agile Animal Farm highlights the behaviours we all have and how we are interacting with others. At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development.",
 		topic : "Topic: Agile Culture and Organisational Shift",
-		description	: ""
+		description	: "Agile Animal Farm highlights the behaviours we all have and how we are interacting with others. At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development."
 	},
 
-	eric : {
-		id : "spk-eric",
+	montreal : {
+		id : "spk-montreal",
 		img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPjAAAAJGE0NDU1NzZkLWI5MmYtNDY0YS05ZjBlLTNlNjNiZDNjOGFhMw.jpg",
 		img_alt : "",
 		name : "Eric LARAMÉE",
@@ -28,8 +28,8 @@ var speakers = {
 		
 	},
 
-	kimble : {
-		id : "spk-kimble",
+	danang : {
+		id : "spk-danang",
 		img_src : "http://www.agilevietnam.org/conf/2016/img/Kimble-Ngo.png",
 		img_alt : "",
 		name : "Kimble NGO",
@@ -42,8 +42,8 @@ var speakers = {
 		description	: "aa"
 	},
 
-	quang : {
-		id : "spk-quang",
+	hcmc : {
+		id : "spk-hcmc",
 		img_src : "http://www.agilevietnam.org/conf/2016/img/Quang-Nguyen.png",
 		img_alt : "",
 		name : "Quang NGUYEN",
@@ -56,8 +56,8 @@ var speakers = {
 		description	: ""
 	},
 	
-	cedric : {
-		id : "spk-cedric",
+	singapore : {
+		id : "spk-singapore",
 		img_src : "http://agiletourvietnam.org/wp-content/uploads/2015/10/Cedric-400x400.png",
 		img_alt : "",
 		name : "Cedric MAINGUY",
@@ -68,6 +68,92 @@ var speakers = {
 		original : "...",
 		topic : "Topic: TCS",
 		description	: ""
-	}
+	},
+
+    paris : {
+        id : "spk-paris",
+        img_src : "",
+        img_alt : "",
+        name : "To come",
+        spk_name : "To come",
+        position : "",
+        linkedin : "",
+        spk_title : "Speaker<br>Agile Tour Paris 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    },
+    pune : {
+        id : "spk-pune",
+        img_src : "",
+        img_alt : "",
+        name : "To come",
+        spk_name : "To come",
+        position : "",
+        linkedin : "",
+        spk_title : "Speaker<br>Agile Tour Pune 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    },
+    sidney : {
+        id : "spk-sidney",
+        img_src : "",
+        img_alt : "",
+        name : "To come",
+        spk_name : "To come",
+        position : "",
+        linkedin : "",
+        spk_title : "Speaker<br>Agile Tour Sidney 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    },
+    bangkok : {
+        id : "spk-bangkok",
+        img_src : "",
+        img_alt : "",
+        name : "To come",
+        spk_name : "To come",
+        position : "",
+        linkedin : "",
+        spk_title : "Speaker<br>Agile Tour Bangkok 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    },
+    hongkong : {
+        id : "spk-hongkong",
+        img_src : "",
+        img_alt : "",
+        name : "To come",
+        spk_name : "To come",
+        position : "",
+        linkedin : "",
+        spk_title : "Speaker<br>Agile Tour Hong Kong 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    },
+    china1 : {
+        id : "spk-china1",
+        img_src : "",
+        img_alt : "",
+        name : "To come",
+        spk_name : "To come",
+        position : "",
+        linkedin : "",
+        spk_title : "Speaker<br>Agile Tour China 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    }
+
+
+
+
+
+
+
 }
 
