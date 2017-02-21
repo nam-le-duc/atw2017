@@ -52,10 +52,24 @@ var speakers = {
 		linkedin : "https://vn.linkedin.com/in/quangnd",
 		spk_title : "Agile Coach<br>Agile Tour HCMC 2016",
 		original : "...",
-		topic : "Topic: TCS",
-		description	: ""
+		topic : "Topic: Are You Killing Mr. Jenkins?",
+		description	: "Continuous Integration is crucial in modern software development. Therefore, a lot of teams involve Mr. Jenkins and hope for a better quality software. But do they know that they are killing Mr. Jenkins? My talk will answer this question and introduce 3 levels of good practices to maintain a healthy, strong and long living Mr. Jenkins."
 	},
-	
+
+    hanoi : {
+        id : "spk-hanoi",
+        img_src : "http://www.agilevietnam.org/conf/2016/img/Doi-Pham.png",
+        img_alt : "",
+        name : "Doi An PHAM",
+        spk_name : "Doi PHAM",
+        position : "Agile Coach",
+        linkedin : "https://vn.linkedin.com/in/doipa",
+        spk_title : "Agile Coach<br>Agile Tour HCMC 2016",
+        original : "...",
+        topic : "Topic: How to start your agile journey",
+        description	: "After many years of coaching and transforming organization, he has learned: the first step is the most difficult and crucial to any journey. Prepare to do it right is valuable for people.<br>In his short session,  he will present steps to build your first Agile team from choose right method, select right people and pitfalls to avoid."
+    },
+
 	singapore : {
 		id : "spk-singapore",
 		img_src : "http://agiletourvietnam.org/wp-content/uploads/2015/10/Cedric-400x400.png",
