@@ -136,19 +136,6 @@ var speakers = {
         topic : "Topic: TCS",
         description	: ""
     },
-    hongkong : {
-        id : "spk-hongkong",
-        img_src : "",
-        img_alt : "",
-        name : "To come",
-        spk_name : "To come",
-        position : "",
-        linkedin : "",
-        spk_title : "Speaker<br>Agile Tour Hong Kong 2016",
-        original : "...",
-        topic : "Topic: TCS",
-        description	: ""
-    },
     china1 : {
         id : "spk-china1",
         img_src : "",
