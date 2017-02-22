@@ -151,6 +151,46 @@ jQuery(document).ready(function($) {
 $(window).load(function(){
 
 
+	function detect_mobile() {
+		var mobile = false;
+		if (navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPhone/i)) {
+			//Page.callMobile();
+			mobile = true;
+	//    console.log(1);
+		}
+
+		if (navigator.userAgent.match(/iPad/i)) {
+			//Page.callDesktop();
+			mobile = true;
+		}
+
+		if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/BlackBerry/i)) {
+			/*
+			 if(window.innerWidth <= 640){
+			 Page.callMobile();
+			 }else{
+			 Page.callDesktop();
+			 } */
+			mobile = true;
+		}
+
+		if (navigator.userAgent.match(/Windows Phone/i)) {
+			/*if(window.innerWidth <= 1024){
+			 Page.callMobile();
+			 }else{
+			 Page.callDesktop();
+			 } */
+			mobile = true;
+		}
+		if(window.innerWidth < 1024){
+			mobile = true;
+		}
+		// console.log(navigator.userAgent);
+	//  console.log(mobile);
+		return mobile
+	}
+
+
 	// ADD SPEAKER
 
 	$(function(){
@@ -165,16 +205,44 @@ $(window).load(function(){
 	    html+= template;
 	  });
 	  $("#content").html(html);
-
   	})
 
-  $(document).on('click','.open-popup', function(){
+$( "#dialog" ).dialog({
+        autoOpen: false,
+        width: '90%',
+        maxWidth: 700,
+        resizable: false,
+   		beforeClose: function( event, ui ) {
+   			$(".wrap-popup").addClass("hidden");
+   		},
+   		open: function( event, ui ) {
+   			$(".wrap-popup").removeClass("hidden");
+   			$(".wrap-popup").addClass("show");
+   		},
+    });
+
+$(document).on('touchstart','.open-popup', function(){	
+	window.touchmoving = window.pageYOffset;
+});
+
+$(document).on('click touchend','.open-popup', function(event){	
+	$( "#dialog" ).dialog( "open" );
+	$(".ui-dialog-content ").addClass("popup_content");
+	event.preventDefault();
+
+	if (window.touchmoving != window.pageYOffset && detect_mobile() == true) {
+		return;
+	}
+
+	else{
     var id = $(this).data('id');
-    console.log(id);
+    
     console.log(speakers[id]);
     var speaker = speakers[id];
     var can_show = true;
      $(Object.keys(speaker)).each(function(index, key){
+  
+     	console.log(speaker['img_src']);
      	if(key == 'img_src'){
 			$("#speaker_" + key).attr('src',speaker[key] || '');
      	}else if(key == 'img_alt'){
@@ -192,39 +260,8 @@ $(window).load(function(){
 	  });
      if(!can_show) return;
      $('.wrap-popup').addClass('show');
-    // $('.wrap-popup .speaker-popup').html(speakers[id]);
-    // //if (typeof(myVariable) != "undefined")
-    // 	$('.wrap-popup').addClass('show');
-	})
-
-
- //  	$("#spk-eric").click(function(){
-	// 	var target = $('.wrap-popup-eric');
-	// 	if (target.hasClass('active')) {
-	// 	target.removeClass('active');
-	// 	$(this).removeClass('active');
-	// 	}
-	// 	else{
-	// 	$('.wrap-popup-eric').removeClass('active');
-	// 	target.addClass('active').slideDown();
-	// 	$(this).addClass('active');
-	// 	}
-	// });
-
-	// $(".popup-close").click(function(){
-		
-	// 	var target = $('.wrap-popup-eric');
-	// 	if (target.hasClass('active')) {
-	// 	target.removeClass('active');
-	// 	$(this).removeClass('active');
-	// 	}
-	// 	else{
-	// 	$('.wrap-popup-eric').removeClass('active');
-	// 	target.addClass('active').slideDown();
-	// 	$(this).addClass('active');
-	// 	}
-	// });
-
+    }
+})
 
 
 	//PARALLAX BACKGROUND
@@ -251,6 +288,88 @@ $(window).load(function(){
 			// }
 	
 	});
+
+		var agendaData = {
+  "danang": [
+    {
+      "TIME": "7:00 - 8:00",
+      "PROGRAM": "REGISTRATION & COFFEE TIME"
+    },
+    {
+      "TIME": "8:00 - 8:30",
+      "PROGRAM": "OPENING PLENARY"
+    },
+    {
+      "TIME": "8:30 - 9:30",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "9:30 - 10:15",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "10:15 - 10:45",
+      "PROGRAM": "TEA BREAK AND NETWORKING"
+    },
+    {
+      "TIME": "10:45 - 11:45",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "11:45 - 13:00",
+      "PROGRAM": "LUNCH TIME"
+    },
+    {
+      "TIME": "13:00 - 14:00",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "14:00 - 14:30",
+      "PROGRAM": "TEA BREAK AND NETWORKING"
+    },
+    {
+      "TIME": "14:30 - 15:15",
+      "PROGRAM": "WORKSHOP OR LECTURE"
+    },
+    {
+      "TIME": "15:15 - 16:15",
+      "PROGRAM": "CLOSING PLENARY"
+    }
+  ]
+}
+
+
+function renderAgenda(place) {
+    var $container = $('[data-place="' + place + '"]');
+    $container.empty();
+    $.each(agendaData[place], function(index, item) {
+      var $tmpAgendaItem = $($('#tmpAgendaItem').html().trim());
+      $tmpAgendaItem.find('.time').html(item['TIME']);
+
+      // Columns
+      var roomCount = Object.keys(item).length;
+      for(var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
+        var $tmpColumn = $($('#tmpAgendaColumn').html().trim()),
+          key = Object.keys(item)[roomIndex],
+          val = item[key].split('\r\n');
+        
+        // Heading
+        if (val[0] != undefined)
+          $tmpColumn.find('.topic-heading').html(val[0]);
+        // Topic name
+        if (val[1] != undefined)
+          $tmpColumn.find('.topic-title').html(val[1]);
+        $tmpAgendaItem.find('.description').append($tmpColumn);
+      }
+      // console.log(Object.keys(item).length);
+      // console.log('-----------');
+      $container.append($tmpAgendaItem);
+    });
+  }
+
+  //renderAgenda('saigon');
+  renderAgenda('danang');
+  //renderAgenda('hanoi');
 
 });
 
@@ -347,6 +466,11 @@ $(window).load(function(){
     infowindow.open(map, marker);
 	}
 	google.maps.event.addDomListener(window, 'load', init_map);
+
+
+
+
+
 	
 
 	

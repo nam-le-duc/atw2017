@@ -22,6 +22,7 @@
 		- Preload	
 */
 
+
 /* CORE CSS */
 
 @font-face {
@@ -299,6 +300,9 @@ h4 {
 	-webkit-transition-delay: 100ms;
 	   -moz-transition-delay: 100ms;
 	        transition-delay: 100ms;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
  
 .speaker figcaption p {
@@ -369,9 +373,15 @@ h4 {
 #speaker-detail i {
 	vertical-align:middle;
 }
+
+img.img-responsive{
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
 	
 
-/* SCHEDULE */
+/* SCHEDULE - AGENDA */
 
 .event {
 	display:table;
@@ -427,10 +437,18 @@ h4 {
 	padding:0;
 
 }
+
+#agenda .event-column{
+	width: 30%;
+}
+
+#agenda .description{
+	width: 100%;
+}
+
 .event .description.room-no div {
 	padding:0 0;
    padding-top:10px;
-	width:19.25%;
 
 	display:inline-block;
 	vertical-align:middle;
@@ -450,6 +468,7 @@ h4 {
 }
 .event .description.room-no.no-bg div:last-child{
 	border-right:none;
+	padding-bottom: 10px;
 }
 .event .description.room-no div:nth-child(2){
 	padding-right:5px;
@@ -462,7 +481,7 @@ h4 {
 	background:none;
 	border-right:2px solid #FFF;
 	max-height:auto;
-	height:250px;
+	height:auto;
 }
 .event .description.room-no div h3 strong{
 	padding-top:10px;
@@ -479,7 +498,6 @@ h4 {
 	color:#666 !important;
 	font-size:12px !important;
 	font-weight:normal;
-	
 	text-transform: capitalize;
 }
 .topic-title span{
@@ -912,6 +930,8 @@ select {
   width: 10em;
   height: 10em;
 }
+
+
 /*Style POPUP Speaker*/
 
 .wrap-popup{
@@ -921,7 +941,7 @@ select {
     display:none;
     position:fixed;
     top:0px;
-    z-index: 99999;
+    z-index: 9999;
     left:0px;
 }
 
@@ -938,14 +958,12 @@ select {
 	font-size: 14px;
 }
 
-.wrap-popup .speaker-popup-eric h4{
+.wrap-popup .speaker-popup h4{
 	font-size: 18px;
 }
 
-.speaker{
-	position: relative;
-}
-.speaker-popup-eric{
+
+.speaker-popup{
 	max-width:700px;
     width:90%;
     padding:40px;
@@ -958,21 +976,27 @@ select {
     border-radius:3px;
     background:#fff;
 }
-.speaker-popup-eric h4{
+.speaker-popup h4{
     font-family: 'sinkin_sans600_semibold';
     font-size: 1em;
 }
 
-.wrap-popup-eric.active{
+.wrap-popup.active{
 	display: block;
 }
 
-.speaker-popup-eric p{
+.speaker-popup p{
 	font-family:'sinkin_sans400_regular';
 	font-size:0.8em;
 	padding-bottom:0;
 	line-height:22px;
 }
+
+
+.speaker{
+	position: relative;
+}
+
 
 .popup-close {
     width:30px;
@@ -1001,6 +1025,176 @@ select {
     text-decoration:none;
     color:#fff;
 }
+
+
+
+/*Edit jquery popup*/
+
+.ui-widget-header{
+	border: none;
+	background-color: transparent;
+}
+
+
+.ui-widget.ui-widget-content{
+	max-width: 700px;
+    width: 90%;
+    padding: 40px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+    z-index: 99999;
+}
+
+.ui-dialog-titlebar{
+	position: absolute !important;
+        right: 2px;
+    top: 0px;
+}
+
+.popup_content{
+	overflow: inherit !important;
+}
+
+#dilog{
+	z-index: 999999;
+}
+
+/*TICKET*/
+
+#ticket{
+	color: #fff;
+}
+
+#ticket{
+padding: 80px 20px;
+    background: url(../img/top-bg-micro.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+#groupEventBrite .half-underline:after {
+  height: 3px;
+  bottom: -10px;
+}
+
+#groupEventBrite .title {
+  margin-bottom: 50px;
+  letter-spacing: 0;
+  font-size: 22px;
+}
+
+#groupEventBrite .title .half-underline{
+	font-family: 'sinkin_sans600_semibold';
+}
+
+.btn:hover, .btn:focus {
+    color: #333333;
+    text-decoration: none
+}
+.marginLeft15 {
+  margin-left: 15px;
+}
+
+.white-background {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.button-white {
+  color: #000 !important;
+  background: #fff !important;
+  border: 2px solid #fff !important;
+  text-decoration: none !important;
+
+}
+
+.button-white:hover {
+  color: #ffffff !important;
+  background: #6f6898 !important;
+  border: 2px solid #6f6898 !important;
+}
+
+.button-green {
+  color: #ffffff !important;
+  background: #46b869 !important;
+  border: 2px solid #46b869 !important;
+  text-decoration: none !important;
+}
+
+.button-green:hover {
+  background: #6f6898 !important;
+  border: 2px solid #6f6898 !important;
+}
+
+.spo-logo img {
+  width: auto;
+  max-width: 200px;
+  max-height: 120px;
+}
+
+.space-60 {
+  padding: 30px 0;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #000;
+  font-family: 'sinkin_sans600_semibold';
+  min-width: 250px;
+  font-size: 16px;
+}
+
+.inline-heading {
+  display: table;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.inline-heading .heading {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.inline-heading .heading.bordered span {
+  padding: 10px;
+  border: 3px solid #fff;
+  white-space: nowrap;
+  display: inline-block;
+  font-family: 'source_sans_prosemibold';
+}
+
+.inline-heading.with-icon .heading {
+  padding: 0;
+}
+
+.heading-icon {
+  width: 80px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.half-underline {
+  position: relative;
+  padding-bottom: 7px;
+}
+
+.half-underline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 1px;
+  background-color: #fff;
+  max-width: 200px;
+}
+
+/*END TICKET*/
 
 
 
