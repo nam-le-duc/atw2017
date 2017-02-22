@@ -260,8 +260,10 @@ $(document).on('click touchend','.open-popup', function(event){
 	  });
      if(!can_show) return;
      $('.wrap-popup').addClass('show');
+
     }
 })
+
 
 
 	//PARALLAX BACKGROUND
