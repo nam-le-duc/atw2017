@@ -86,7 +86,7 @@ var speakers = {
 
     paris : {
         id : "spk-paris",
-        img_src : "",
+        img_src : "img/coming-soon.jpg",
         img_alt : "",
         name : "To come",
         spk_name : "To come",
@@ -99,7 +99,7 @@ var speakers = {
     },
     pune : {
         id : "spk-pune",
-        img_src : "",
+        img_src : "img/coming-soon.jpg",
         img_alt : "",
         name : "To come",
         spk_name : "To come",
@@ -112,7 +112,7 @@ var speakers = {
     },
     sidney : {
         id : "spk-sidney",
-        img_src : "",
+        img_src : "img/coming-soon.jpg",
         img_alt : "",
         name : "To come",
         spk_name : "To come",
@@ -125,7 +125,7 @@ var speakers = {
     },
     bangkok : {
         id : "spk-bangkok",
-        img_src : "",
+        img_src : "img/coming-soon.jpg",
         img_alt : "",
         name : "To come",
         spk_name : "To come",
@@ -138,7 +138,7 @@ var speakers = {
     },
     china1 : {
         id : "spk-china1",
-        img_src : "",
+        img_src : "img/coming-soon.jpg",
         img_alt : "",
         name : "To come",
         spk_name : "To come",

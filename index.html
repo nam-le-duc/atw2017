@@ -36,9 +36,10 @@
     <link rel="stylesheet" href="css/flipCard.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
-
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/color/red.css">
+
 
 
     <!-- Font -->
@@ -76,6 +77,12 @@
             .speaker:nth-child(3n+1) { clear:none; }
             .speaker:nth-child(4n+1) { clear:left; }
         }
+
+        #dialog-link {
+            padding: .4em 1em .4em 20px;
+            text-decoration: none;
+            position: relative;
+        }
     </style>
 
 
@@ -85,43 +92,13 @@
 <body>
 
 <!-- PRELOADING  -->
-<div id="preload">
+<!-- <div id="preload">
     <div class="preload">
         <div class="loader">
             Loading...
         </div>
     </div>
-</div>
-<div class="wrap-popup-speaker wrap-popup">
-    <div class="speaker-popup-speaker speaker-popup">
-        <div class="row">
-            <div class="speaker col-xs-8 col-sm-4 col-md-4 col-lg-4">
-                 <figure>
-                    <img class="img-responsive" id="speaker_img_src" 
-                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPjAAAAJGE0NDU1NzZkLWI5MmYtNDY0YS05ZjBlLTNlNjNiZDNjOGFhMw.jpg"
-                         alt="">
-                    <figcaption class="text-center">
-                        <h4 id="speaker_name">Eric LARAMÉE</h4>
-                        <p id="speaker_position">Coach and trainer</p>
-                        <a  id="speaker_linkedin" target="_blank" href="https://www.linkedin.com/in/erlaramee"><i
-                                class="fa fa-3x fa-linkedin-square"></i></a>
-                    </figcaption>
-                    
-                </figure> 
-            </div>
-            <div class="speaker col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <h4 id="speaker_spk_name">Pierre E. NEIS</h4>
-                        <span class="title" id="speaker_spk_title">Lean Agile Coach Agile Tour Beirut 2016</span><br></span>
-                        <span id="speaker_original" class="topic" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="Agile Animal Farm highlights the behaviours we all have and how we are interacting with others.
-At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development."><span id="speaker_topic">Topic: Agile Culture and Organisational Shift</span></span>
-            </div>
-        </div>
-        <h4>Topic Description</h4>
-        <!-- <a class="popup-close" href="#">x</a> -->
-        <a class="popup-close" href="javascript:$('.wrap-popup').removeClass('show');">x</a>
-        <p id="speaker_description"></p>
-    </div> 
-</div>
+</div> -->
 
 <!-- NAVIGATION -->
 <nav class="navbar navbar-fixed-top navbar-custom" role="navigation">
@@ -146,8 +123,10 @@ At the end of the presentation, you will find a small introduction on how to use
                     <li><a data-scroll href="#schedule">Schedule</a></li>
                 -->
                 <li><a data-scroll href="#venue">Venue</a></li>
+                <li><a data-scroll href="#agenda">Agenda</a></li>
                 <li><a data-scroll href="#sponsors">Sponsors</a></li>
                 <li><a data-scroll href="#register">Register</a></li>
+                <li><a data-scroll href="#ticket">Ticket</a></li>
                 <li><a data-scroll href="#contact">Contact</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -275,13 +254,7 @@ At the end of the presentation, you will find a small introduction on how to use
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
                 <h2 class="uppercase text-center">Registered speakers</h2>
-                <div id = "content" class="row">
-                    
-
-                    
-
-                    
-                   
+                <div id="content" class="row">
                     
                 </div>
             </div>
@@ -333,6 +306,98 @@ At the end of the presentation, you will find a small introduction on how to use
         </div>
     </div>
 </section>
+
+<!-- AGENDA -->
+          <section id="agenda">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                  <h2 class="uppercase text-center"><img width="80px" src="img/agenda.png">Event Agenda</h2>
+                  <div id="days" class="owl-carousel">
+                    <!-- <div class="item uppercase">
+                      <h4 class="uppercase hidden-xs">HoChiMinh</h4>
+                      <h5>Oct 14, 2016</h5>
+                    </div> -->
+                    <div class="item uppercase">
+                      <h4 class="uppercase hidden-xs">Danang</h4>
+                      <h5>June 3rd, 2017</h5>
+                    </div>
+                    <!-- <div class="item uppercase">
+                      <h4 class="uppercase hidden-xs">Hanoi</h4>
+                      <h5>Oct 16, 2016</h5>
+                    </div> -->
+                  </div>
+                  <!-- days -->
+                  <div id="timetable" class="owl-carousel center owl-theme">
+                    <!-- DAY 1 -->
+                    <!-- <div id="day1" class="item column-one-one">
+                      <div class="event room">
+                        <div class="event-inner">
+                          <div class="icon">
+                            <span class="time">TIME</span>
+                          </div>
+                          <div class="room-no description">
+                            <div class="event-column">
+                              <h3>PROGRAM</h3>
+                            </div>
+                            <div class="event-column">
+                              <h3>ROOM 1</h3>
+                            </div>
+                            <div class="event-column">
+                              <h3>ROOM 2</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-place="saigon"></div>
+                    </div> -->
+                    <!--end day 1-->
+                    <div id="day2" class="item column-one-one">
+                      <div class="event room">
+                        <div class="event-inner">
+                          <div class="icon">
+                            <span class="time">TIME</span>
+                          </div>
+                          <div class="room-no description">
+                            <div class="event-column-dn">
+                              <h3>PROGRAM</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div data-place="danang"></div>
+                    </div>
+                    <!-- end day 2 -->
+                    <!-- <div id="day3" class="item column-one-two">
+                      <div class="event room">
+                        <div class="event-inner">
+                          <div class="icon">
+                            <span class="time">TIME</span>
+                          </div>
+                          <div class="room-no description">
+                            <div class="event-column-dn">
+                              <h3>HALL ROOM</h3>
+                            </div>
+                            <div class="event-column-dn">
+                              <h3>ROOM 1</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-place="hanoi">
+                      
+                      </div>
+                    </div> -->
+                    <!-- end day 3 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- time table -->
+            </div>
+          </section>
 
 <!-- SPONSORS -->
 <section id="sponsors">
@@ -411,6 +476,41 @@ At the end of the presentation, you will find a small introduction on how to use
     </div>
 </section>
 
+<!-- TICKET -->
+<section id="ticket">
+    <div class="container">
+      <div class="row">
+        <h2 class="uppercase text-center">
+            <img src="img/icon-ticket.png">
+          <span class="marginLeft15">GET YOUR TICKET</span>
+        </h2>
+       <div id="groupEventBrite">
+          <div class="inline-heading with-icon">
+            <div class="heading">
+              <img class="heading-icon" src="img/icon-eventbrite.png" />
+            </div>
+            <div class="heading">
+                EVENTBRITE
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+              <img class="img-responsive" src="img/thumb-eventbrite.png" />
+            </div>
+            <div class="col-sm-6">
+              <h4 class="title">
+                <span class="half-underline">Get the ticket of Agile {Tour} World 2017 <br>
+                 and make payment via Eventbrite</span>
+              </h4>
+              <div class="clearfix"></div>
+              <a class="btn btn-white btn-lg" href="http://goo.gl/KvP4sP" target="_blank">BOOK NOW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <!-- CONTACT -->
 <section id="contact">
 
@@ -467,8 +567,65 @@ At the end of the presentation, you will find a small introduction on how to use
     </div>
 </section>
 
+
+<!-- popup -->
+
+<div  class="wrap-popup-speaker wrap-popup"></div>
+<div id="dialog" class="speaker-popup-speaker">
+    <div class="row">
+        <div class="speaker col-xs-8 col-sm-4 col-md-4 col-lg-4">
+             <figure>
+                <img class="img-responsive" id="speaker_img_src" 
+                     src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAPjAAAAJGE0NDU1NzZkLWI5MmYtNDY0YS05ZjBlLTNlNjNiZDNjOGFhMw.jpg"
+                     alt="">
+                <figcaption class="text-center">
+                    <h4 id="speaker_name">Eric LARAMÉE</h4>
+                    <p id="speaker_position">Coach and trainer</p>
+                    <a  id="speaker_linkedin" target="_blank" href="https://www.linkedin.com/in/erlaramee"><i
+                            class="fa fa-3x fa-linkedin-square"></i></a>
+                </figcaption>
+                
+            </figure> 
+        </div>
+        <div class="speaker col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <h4 id="speaker_spk_name">Pierre E. NEIS</h4>
+                <span class="title" id="speaker_spk_title">Lean Agile Coach Agile Tour Beirut 2016</span><br>
+                <span id="speaker_original" class="topic" data-toggle="tooltip" data-container="body" data-html="true" data-trigger="hover focus click" title="" data-original-title="Agile Animal Farm highlights the behaviours we all have and how we are interacting with others.
+    At the end of the presentation, you will find a small introduction on how to use this game in Organisational Development.">
+                    <span id="speaker_topic">Topic: Agile Culture and Organisational Shift</span>
+                </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <h4>Topic Description</h4>
+        <p id="speaker_description"></p>
+    </div>
+</div>
+<!-- end popup -->
+
+<template id="tmpAgendaItem">
+    <div class="event">
+      <div class="event-inner">
+        <div class="icon">
+          <i class="fa fa-3x fa-clock-o"></i>
+          <span class="time"></span>
+        </div>
+        <div class="room-no description no-bg"></div>
+      </div>
+    </div>
+  </template>
+  <template id="tmpAgendaColumn">
+    <div class="event-column-dn">
+        <h3 class="topic-heading"></h3>
+        <!-- <div class="topic-title"></div> -->
+    </div>
+</template>
+
+
 <!-- modernizr -->
 <script src="js/modernizr.custom.00695.js"></script>
+<script src="js/jquery.js"></script>
 
 <script src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -479,6 +636,7 @@ At the end of the presentation, you will find a small introduction on how to use
 <script src="js/jquery.countTo.js"></script>
 <script src="js/flipCard.js"></script>
 <script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/smooth-scroll.js"></script>
 <script src="js/retina-1.1.0.min.js"></script>
 <script src="js/speakers.js"></script>
@@ -504,6 +662,17 @@ At the end of the presentation, you will find a small introduction on how to use
     </div>
 
 
+</script>
+<script type="text/javascript">
+
+    
+
+// Link to open the dialog
+// $( "#dialog-link" ).click(function( event ) {
+//     $( "#dialog" ).dialog( "open" );
+//     event.preventDefault();
+// });
+   
 </script>
 
 
