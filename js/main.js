@@ -223,18 +223,21 @@ $( "#dialog" ).dialog({
 
 $(document).on('touchstart','.open-popup', function(){	
 	window.touchmoving = window.pageYOffset;
+	console.log(touchmoving);
 });
 
 $(document).on('click touchend','.open-popup', function(event){	
-	$( "#dialog" ).dialog( "open" );
-	$(".ui-dialog-content ").addClass("popup_content");
-	event.preventDefault();
+	
 
 	if (window.touchmoving != window.pageYOffset && detect_mobile() == true) {
+		console.log(window.pageYOffset);
 		return;
 	}
 
 	else{
+		$( "#dialog" ).dialog( "open" );
+	$(".ui-dialog-content ").addClass("popup_content");
+	event.preventDefault();
     var id = $(this).data('id');
     
     console.log(speakers[id]);
@@ -254,9 +257,9 @@ $(document).on('click touchend','.open-popup', function(event){
      	} else{
      		$("#speaker_" + key).html(speaker[key] || '');
      	}
-     	if(key == 'description' && ( typeof speaker[key] == 'undefined' || speaker[key].length == 0)){
-     		can_show = false;
-     	}
+     	// if(key == 'description' && ( typeof speaker[key] == 'undefined' || speaker[key].length == 0)){
+     	// 	can_show = false;
+     	// }
 	  });
      if(!can_show) return;
      $('.wrap-popup').addClass('show');

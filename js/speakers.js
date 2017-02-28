@@ -39,7 +39,7 @@ var speakers = {
 		spk_title : "Communication Guru<br>Agile Tour Da Nang 2016<br>",
 		original : "...",
 		topic : "Topic: From IT Expert to Sought-After IT Guru",
-		description	: "aa"
+		description	: ""
 	},
 
 	hcmc : {
