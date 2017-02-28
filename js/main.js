@@ -282,136 +282,6 @@ $(document).on('click touchend','.open-popup', function(event){
 	
 	//HEADER ANIMATION
 	$(window).scroll(function() {
-    
-$(window).load(function() {
-
-
-        function detect_mobile() {
-            var mobile = false;
-            if (navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPhone/i)) {
-                //Page.callMobile();
-                mobile = true;
-                //    console.log(1);
-            }
-
-            if (navigator.userAgent.match(/iPad/i)) {
-                //Page.callDesktop();
-                mobile = true;
-            }
-
-            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/BlackBerry/i)) {
-				/*
-				 if(window.innerWidth <= 640){
-				 Page.callMobile();
-				 }else{
-				 Page.callDesktop();
-				 } */
-                mobile = true;
-            }
-
-            if (navigator.userAgent.match(/Windows Phone/i)) {
-				/*if(window.innerWidth <= 1024){
-				 Page.callMobile();
-				 }else{
-				 Page.callDesktop();
-				 } */
-                mobile = true;
-            }
-            if (window.innerWidth < 1024) {
-                mobile = true;
-            }
-            // console.log(navigator.userAgent);
-            //  console.log(mobile);
-            return mobile
-        }
-
-
-        // ADD SPEAKER
-
-        $(function () {
-            var html = "";
-            $(Object.keys(speakers)).each(function (i, e) {
-                var template = $("#template").html();
-                var keys = Object.keys(speakers[e]);
-                template = template.replace("{key}", e);
-                $(keys).each(function (index, key) {
-                    template = template.replace("{" + key + "}", speakers[e][key]);
-                });
-                html += template;
-            });
-            $("#content").html(html);
-        })
-
-        $("#dialog").dialog({
-            autoOpen: false,
-            width: '90%',
-            maxWidth: 700,
-            resizable: false,
-            beforeClose: function (event, ui) {
-                $(".wrap-popup").addClass("hidden");
-            },
-            open: function (event, ui) {
-                $(".wrap-popup").removeClass("hidden");
-                $(".wrap-popup").addClass("show");
-            },
-        });
-
-        $(document).on('touchstart', '.open-popup', function () {
-            window.touchmoving = window.pageYOffset;
-        });
-
-        $(document).on('click touchend', '.open-popup', function (event) {
-            $("#dialog").dialog("open");
-            $(".ui-dialog-content ").addClass("popup_content");
-            event.preventDefault();
-
-            if (window.touchmoving != window.pageYOffset && detect_mobile() == true) {
-                return;
-            }
-
-            else {
-                var id = $(this).data('id');
-
-                console.log(speakers[id]);
-                var speaker = speakers[id];
-                var can_show = true;
-                $(Object.keys(speaker)).each(function (index, key) {
-
-                    console.log(speaker['img_src']);
-                    if (key == 'img_src') {
-                        $("#speaker_" + key).attr('src', speaker[key] || '');
-                    } else if (key == 'img_alt') {
-                        $("#speaker_" + key).attr('alt', speaker[key] || '');
-                    } else if (key == 'original') {
-                        $("#speaker_" + key).attr('data-original-title', speaker[key] || '');
-                    } else if (key == 'linkedin') {
-                        $("#speaker_" + key).attr('href', speaker[key] || '');
-                    } else {
-                        $("#speaker_" + key).html(speaker[key] || '');
-                    }
-                    if (key == 'description' && ( typeof speaker[key] == 'undefined' || speaker[key].length == 0)) {
-                        can_show = false;
-                    }
-                });
-                if (!can_show) return;
-                $('.wrap-popup').addClass('show');
-
-            }
-        })
-
-
-        //PARALLAX BACKGROUND
-        $(window).stellar({
-            horizontalScrolling: false,
-        });
-
-
-        //PRELOADER
-        $('#preload').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-
-
-        //HEADER ANIMATION
-        $(window).scroll(function () {
 
             if ($(".navbar").offset().top > 50) {
                 $(".navbar-fixed-top").addClass("top-nav-collapse");
@@ -441,8 +311,8 @@ $(window).load(function() {
                 },
                 {
                     "TIME": "8:30 - 10:00",
-                    "HALL ROOM": "To come\r\nAgile Tour Osaka\r\n...\r\nQuang Nguyen\r\nAgile Tour HCMC\r\nAre You Killing Mr. Jenkins?",
-                    "WORKSHOP 1": "Eric LARAMÉE\r\nAgile Tour Montreal\r\nStorytelling' as a transformation tool"
+                    "HALL ROOM": "TOPIC\r\nSPEAKER<br>by Kiro Harada<br>Agile Tour Osaka\r\n\r\nAre You Killing Mr. Jenkins?\r\nQuang Nguyen<br>byTai Huynh<br>Agile Tour HCMC\r\n",
+                    "WORKSHOP 1": "Storytelling' as a transformation tool\r\nEric LARAMÉE<br>by Martin Goyette<br>Agile Tour Montreal"
                 },
                 {
                     "TIME": "10:00 - 10:15",
@@ -450,8 +320,8 @@ $(window).load(function() {
                 },
                 {
                     "TIME": "10:15 - 11:45",
-                    "HALL ROOM": "Kimble NGO\r\nAgile Tour Da Nang\r\n...\r\nDoi Pham\r\nAgile Tour Hanoi\r\nHow to start your agile journey",
-                    "WORKSHOP 1": "Stephen Norrvall & Terry Haayema\r\nAgile Tour Sidney\r\nChange your language, change your thinking"
+                    "HALL ROOM": "TOPIC\r\nKimble NGO<br>by Alexandre Cuva<br>Agile Tour Da Nang\r\n\r\nHow to start your agile journey\r\nDoi Pham<br>by himself<br>Agile Tour Hanoi",
+                    "WORKSHOP 1": "Change your language, change your thinking\r\nStephen Norrvall & Terry Haayema<br>by Jeremie Benazra<br>Agile Tour Sydney"
                 },
                 {
                     "TIME": "11:45 - 13:00",
@@ -459,8 +329,8 @@ $(window).load(function() {
                 },
                 {
                     "TIME": "13:00 - 15:30",
-                    "HALL ROOM": "Cedric MAINGUY\r\nAgile Tour Singapore\r\n...\r\nTo Come\r\nAgile Tour Osaka\r\n...",
-                    "WORKSHOP 1": "Pierre E. Neis\r\nAgile Tour Beirut\r\nAgile Culture and Organisational Shift"
+                    "HALL ROOM": "TOPIC\r\nCedric MAINGUY<br>by Sylvain MAHE<br>Agile Tour Singapore\r\n\r\nTOPIC\r\nSPEAKER<br>by ORGA<br>Agile Tour CITY",
+                    "WORKSHOP 1": "Agile Culture and Organisational Shift\r\nPierre E. Neis<br>by Hervouet PIERRE<br>Agile Tour Beirut"
                 },
                 {
                     "TIME": "15:30 - 15:45",
@@ -468,8 +338,8 @@ $(window).load(function() {
                 },
                 {
                     "TIME": "15:45 - 17:15",
-                    "HALL ROOM": "To come\r\nAgile Tour Bangkok\r\n...\r\nTo Come\r\nAgile Tour Pune\r\n...",
-                    "WORKSHOP 1": "To come\r\nAgile Tour Paris\r\n..."
+                    "HALL ROOM": "TOPIC\r\nSPEAKER<br>by Kulawat Wonsaroj<br>Agile Tour Bangkok\r\n\r\nTOPIC\r\nSPEAKER<br>by Madhur KATHURIA<br>Agile Tour Pune",
+                    "WORKSHOP 1": "Agile Innovation with JTBD\r\nRicardo TOME<br>by Patrice PETIT<br>Agile Tour Paris"
                 },
                 {
                     "TIME": "17:15 - 17:30",
@@ -477,7 +347,7 @@ $(window).load(function() {
                 },
                 {
                     "TIME": "17:30 - 21:00",
-                    "BEACH": "BBQ & BDAY PARTY"
+                    "HALL ROOM": "BBQ & BDAY PARTY"
                 }
 
             ]
@@ -498,7 +368,7 @@ $(window).load(function() {
                 // each item here is a room
                 var roomCount = Object.keys(item).length;
                 for (var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
-                    var $tmpColumn = $('<div/>', {'class': 'event-column-dn'});
+                    var $tmpColumn = $('<div/>', {'class': 'event-column'});
                     var key = Object.keys(item)[roomIndex],
                         val = item[key].split('\r\n');
 
@@ -506,7 +376,7 @@ $(window).load(function() {
                     $.each(val, function (valIndex, valItem) {
                         if (valItem != undefined) {
                             var $topicItem;
-                            switch (valIndex % 4) {
+                            switch (valIndex % 3) {
                                 case 0:
                                     $topicItem = $('<h3/>', {
                                         'class': 'topic-heading',
@@ -520,12 +390,6 @@ $(window).load(function() {
                                     });
                                     break;
                                 case 2:
-                                    $topicItem = $('<div/>', {
-                                        'class': 'topic-title',
-                                        'html': valItem
-                                    });
-                                    break;
-                                case 3:
                                     $topicItem = $('<br/>');
                                     break;
                             }

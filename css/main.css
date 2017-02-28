@@ -387,13 +387,13 @@ img.img-responsive{
 	display:table;
 	width:100%;
 	border-spacing: 10px 5px;
-	height: 110px; 
+	height: 110px;
 }
 .event.room {
 	display:table;
 	width:100%;
 	border-spacing: 10px 5px;
-	height: 60px; 
+	height: 60px;
 }
 .event-inner {
 	display: table-row;
@@ -424,7 +424,7 @@ img.img-responsive{
 }
 
 .event .description {
-	padding:15px;
+	/*padding:15px;*/
 	display:table-cell;
 	vertical-align:middle;
 }
@@ -446,16 +446,34 @@ img.img-responsive{
 	width: 100%;
 }
 
+.event .description.room-no div.event-column {
+	padding: 0 0;
+	padding-top: 10px;
+	width: 50%;
+	display: inline-block;
+	vertical-align: middle;
+	color: #e74c3c;
+	font-weight: bold;
+	font-size: 17px;
+}
+
 .event .description.room-no div {
 	padding:0 0;
-   padding-top:10px;
+	padding-top:10px;
 
 	display:inline-block;
 	vertical-align:middle;
-	
+
 	color:#e74c3c;
 	font-weight:bold;
 	font-size:17px;
+}
+.column-one-two .event .description.room-no .event-column-dn:not(:only-child) {
+	width: 49.7%;
+}
+
+.column-one-three .event .description.room-no .event-column-dn:not(:only-child) {
+	width: 33%;
 }
 .event .description.room-no.no-bg div{
 	position:relative;
@@ -501,7 +519,7 @@ img.img-responsive{
 	text-transform: capitalize;
 }
 .topic-title span{
-	text-transform: lowercase;	
+	text-transform: lowercase;
 }
 .topic-title .speaker-name{
 	text-transform: capitalize !important;
