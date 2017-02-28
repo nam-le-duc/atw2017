@@ -148,6 +148,141 @@ jQuery(document).ready(function($) {
 	
 
 
+
+$(window).load(function(){
+
+
+	function detect_mobile() {
+		var mobile = false;
+		if (navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPhone/i)) {
+			//Page.callMobile();
+			mobile = true;
+	//    console.log(1);
+		}
+
+		if (navigator.userAgent.match(/iPad/i)) {
+			//Page.callDesktop();
+			mobile = true;
+		}
+
+		if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/BlackBerry/i)) {
+			/*
+			 if(window.innerWidth <= 640){
+			 Page.callMobile();
+			 }else{
+			 Page.callDesktop();
+			 } */
+			mobile = true;
+		}
+
+		if (navigator.userAgent.match(/Windows Phone/i)) {
+			/*if(window.innerWidth <= 1024){
+			 Page.callMobile();
+			 }else{
+			 Page.callDesktop();
+			 } */
+			mobile = true;
+		}
+		if(window.innerWidth < 1024){
+			mobile = true;
+		}
+		// console.log(navigator.userAgent);
+	//  console.log(mobile);
+		return mobile
+	}
+
+
+	// ADD SPEAKER
+
+	$(function(){
+	  var html = "";
+	  $(Object.keys(speakers)).each(function(i,e){
+	    var template = $("#template").html();
+	    var keys = Object.keys(speakers[e]);
+	    template = template.replace("{key}", e);
+	    $(keys).each(function(index, key){
+	      template = template.replace("{"+key+"}", speakers[e][key]);
+	    });
+	    html+= template;
+	  });
+	  $("#content").html(html);
+  	})
+
+$( "#dialog" ).dialog({
+        autoOpen: false,
+        width: '90%',
+        maxWidth: 700,
+        resizable: false,
+   		beforeClose: function( event, ui ) {
+   			$(".wrap-popup").addClass("hidden");
+   		},
+   		open: function( event, ui ) {
+   			$(".wrap-popup").removeClass("hidden");
+   			$(".wrap-popup").addClass("show");
+   		},
+    });
+
+$(document).on('touchstart','.open-popup', function(){	
+	window.touchmoving = window.pageYOffset;
+	console.log(touchmoving);
+});
+
+$(document).on('click touchend','.open-popup', function(event){	
+	
+
+	if (window.touchmoving != window.pageYOffset && detect_mobile() == true) {
+		console.log(window.pageYOffset);
+		return;
+	}
+
+	else{
+		$( "#dialog" ).dialog( "open" );
+	$(".ui-dialog-content ").addClass("popup_content");
+	event.preventDefault();
+    var id = $(this).data('id');
+    
+    console.log(speakers[id]);
+    var speaker = speakers[id];
+    var can_show = true;
+     $(Object.keys(speaker)).each(function(index, key){
+  
+     	console.log(speaker['img_src']);
+     	if(key == 'img_src'){
+			$("#speaker_" + key).attr('src',speaker[key] || '');
+     	}else if(key == 'img_alt'){
+			$("#speaker_" + key).attr('alt',speaker[key] || '');
+     	}else if(key == 'original'){
+     		$("#speaker_" + key).attr('data-original-title',speaker[key] || '');
+     	}else if(key == 'linkedin'){
+     		$("#speaker_" + key).attr('href',speaker[key] || '');
+     	} else{
+     		$("#speaker_" + key).html(speaker[key] || '');
+     	}
+     	// if(key == 'description' && ( typeof speaker[key] == 'undefined' || speaker[key].length == 0)){
+     	// 	can_show = false;
+     	// }
+	  });
+     if(!can_show) return;
+     $('.wrap-popup').addClass('show');
+
+    }
+})
+
+
+
+	//PARALLAX BACKGROUND
+	$(window).stellar({
+		horizontalScrolling: false,
+	});
+    
+	
+    //PRELOADER
+    $('#preload').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+	
+	
+	//HEADER ANIMATION
+	$(window).scroll(function() {
+    
 $(window).load(function() {
 
 
