@@ -83,7 +83,19 @@ var speakers = {
 		topic : "Topic: TCS",
 		description	: ""
 	},
-
+    osaka : {
+        id : "spk-osaka",
+        img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAezAAAAJDU0MDIxYmNiLTE2YzQtNDMwOC1iYmQ1LTM3ODk5ZGY5NDY5Yg.jpg",
+        img_alt : "",
+        name : "Kiro HARADA",
+        spk_name : "Kiro HARADA",
+        position : "Agile Lean Coach",
+        linkedin : "https://www.linkedin.com/in/haradakiro/",
+        spk_title : "Speaker<br>Agile Tour Osaka 2016",
+        original : "...",
+        topic : "Topic: TCS",
+        description	: ""
+    },
     paris : {
         id : "spk-paris",
         img_src : "img/coming-soon.jpg",

@@ -148,6 +148,7 @@ jQuery(document).ready(function($) {
 	
 
 
+
 $(window).load(function(){
 
 
@@ -281,97 +282,268 @@ $(document).on('click touchend','.open-popup', function(event){
 	
 	//HEADER ANIMATION
 	$(window).scroll(function() {
-
-		if ($(".navbar").offset().top > 50) {
-			$(".navbar-fixed-top").addClass("top-nav-collapse");
-		} else {
-			$(".navbar-fixed-top").removeClass("top-nav-collapse");
-		}
-	
-			// if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
-			// 	$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
-			// }
-	
-	});
-
-		var agendaData = {
-  "danang": [
-    {
-      "TIME": "7:00 - 8:00",
-      "PROGRAM": "REGISTRATION & COFFEE TIME"
-    },
-    {
-      "TIME": "8:00 - 8:30",
-      "PROGRAM": "OPENING PLENARY"
-    },
-    {
-      "TIME": "8:30 - 9:30",
-      "PROGRAM": "WORKSHOP OR LECTURE"
-    },
-    {
-      "TIME": "9:30 - 10:15",
-      "PROGRAM": "WORKSHOP OR LECTURE"
-    },
-    {
-      "TIME": "10:15 - 10:45",
-      "PROGRAM": "TEA BREAK AND NETWORKING"
-    },
-    {
-      "TIME": "10:45 - 11:45",
-      "PROGRAM": "WORKSHOP OR LECTURE"
-    },
-    {
-      "TIME": "11:45 - 13:00",
-      "PROGRAM": "LUNCH TIME"
-    },
-    {
-      "TIME": "13:00 - 14:00",
-      "PROGRAM": "WORKSHOP OR LECTURE"
-    },
-    {
-      "TIME": "14:00 - 14:30",
-      "PROGRAM": "TEA BREAK AND NETWORKING"
-    },
-    {
-      "TIME": "14:30 - 15:15",
-      "PROGRAM": "WORKSHOP OR LECTURE"
-    },
-    {
-      "TIME": "15:15 - 16:15",
-      "PROGRAM": "CLOSING PLENARY"
-    }
-  ]
-}
+    
+$(window).load(function() {
 
 
-function renderAgenda(place) {
-    var $container = $('[data-place="' + place + '"]');
-    $container.empty();
-    $.each(agendaData[place], function(index, item) {
-      var $tmpAgendaItem = $($('#tmpAgendaItem').html().trim());
-      $tmpAgendaItem.find('.time').html(item['TIME']);
+        function detect_mobile() {
+            var mobile = false;
+            if (navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPhone/i)) {
+                //Page.callMobile();
+                mobile = true;
+                //    console.log(1);
+            }
 
-      // Columns
-      var roomCount = Object.keys(item).length;
-      for(var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
-        var $tmpColumn = $($('#tmpAgendaColumn').html().trim()),
-          key = Object.keys(item)[roomIndex],
-          val = item[key].split('\r\n');
-        
-        // Heading
-        if (val[0] != undefined)
-          $tmpColumn.find('.topic-heading').html(val[0]);
-        // Topic name
-        if (val[1] != undefined)
-          $tmpColumn.find('.topic-title').html(val[1]);
-        $tmpAgendaItem.find('.description').append($tmpColumn);
-      }
-      // console.log(Object.keys(item).length);
-      // console.log('-----------');
-      $container.append($tmpAgendaItem);
-    });
-  }
+            if (navigator.userAgent.match(/iPad/i)) {
+                //Page.callDesktop();
+                mobile = true;
+            }
 
+            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/BlackBerry/i)) {
+				/*
+				 if(window.innerWidth <= 640){
+				 Page.callMobile();
+				 }else{
+				 Page.callDesktop();
+				 } */
+                mobile = true;
+            }
+
+            if (navigator.userAgent.match(/Windows Phone/i)) {
+				/*if(window.innerWidth <= 1024){
+				 Page.callMobile();
+				 }else{
+				 Page.callDesktop();
+				 } */
+                mobile = true;
+            }
+            if (window.innerWidth < 1024) {
+                mobile = true;
+            }
+            // console.log(navigator.userAgent);
+            //  console.log(mobile);
+            return mobile
+        }
+
+
+        // ADD SPEAKER
+
+        $(function () {
+            var html = "";
+            $(Object.keys(speakers)).each(function (i, e) {
+                var template = $("#template").html();
+                var keys = Object.keys(speakers[e]);
+                template = template.replace("{key}", e);
+                $(keys).each(function (index, key) {
+                    template = template.replace("{" + key + "}", speakers[e][key]);
+                });
+                html += template;
+            });
+            $("#content").html(html);
+        })
+
+        $("#dialog").dialog({
+            autoOpen: false,
+            width: '90%',
+            maxWidth: 700,
+            resizable: false,
+            beforeClose: function (event, ui) {
+                $(".wrap-popup").addClass("hidden");
+            },
+            open: function (event, ui) {
+                $(".wrap-popup").removeClass("hidden");
+                $(".wrap-popup").addClass("show");
+            },
+        });
+
+        $(document).on('touchstart', '.open-popup', function () {
+            window.touchmoving = window.pageYOffset;
+        });
+
+        $(document).on('click touchend', '.open-popup', function (event) {
+            $("#dialog").dialog("open");
+            $(".ui-dialog-content ").addClass("popup_content");
+            event.preventDefault();
+
+            if (window.touchmoving != window.pageYOffset && detect_mobile() == true) {
+                return;
+            }
+
+            else {
+                var id = $(this).data('id');
+
+                console.log(speakers[id]);
+                var speaker = speakers[id];
+                var can_show = true;
+                $(Object.keys(speaker)).each(function (index, key) {
+
+                    console.log(speaker['img_src']);
+                    if (key == 'img_src') {
+                        $("#speaker_" + key).attr('src', speaker[key] || '');
+                    } else if (key == 'img_alt') {
+                        $("#speaker_" + key).attr('alt', speaker[key] || '');
+                    } else if (key == 'original') {
+                        $("#speaker_" + key).attr('data-original-title', speaker[key] || '');
+                    } else if (key == 'linkedin') {
+                        $("#speaker_" + key).attr('href', speaker[key] || '');
+                    } else {
+                        $("#speaker_" + key).html(speaker[key] || '');
+                    }
+                    if (key == 'description' && ( typeof speaker[key] == 'undefined' || speaker[key].length == 0)) {
+                        can_show = false;
+                    }
+                });
+                if (!can_show) return;
+                $('.wrap-popup').addClass('show');
+
+            }
+        })
+
+
+        //PARALLAX BACKGROUND
+        $(window).stellar({
+            horizontalScrolling: false,
+        });
+
+
+        //PRELOADER
+        $('#preload').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+
+
+        //HEADER ANIMATION
+        $(window).scroll(function () {
+
+            if ($(".navbar").offset().top > 50) {
+                $(".navbar-fixed-top").addClass("top-nav-collapse");
+            } else {
+                $(".navbar-fixed-top").removeClass("top-nav-collapse");
+            }
+
+            // if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+            // 	$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+            // }
+
+        });
+
+        var agendaData = {
+            "danang": [
+                {
+                    "TIME": "7:00 - 8:00",
+                    "HALL ROOM": "REGISTRATION & COFFEE TIME"
+                },
+                {
+                    "TIME": "8:00 - 8:15",
+                    "HALL ROOM": "OPENING PLENARY"
+                },
+                {
+                    "TIME": "8:15 - 8:30",
+                    "HALL ROOM": "REMOTE CALL AND TEA BREAK"
+                },
+                {
+                    "TIME": "8:30 - 10:00",
+                    "HALL ROOM": "To come\r\nAgile Tour Osaka\r\n...\r\nQuang Nguyen\r\nAgile Tour HCMC\r\nAre You Killing Mr. Jenkins?",
+                    "WORKSHOP 1": "Eric LARAMÉE\r\nAgile Tour Montreal\r\nStorytelling' as a transformation tool"
+                },
+                {
+                    "TIME": "10:00 - 10:15",
+                    "HALL ROOM": "REMOTE CALL"
+                },
+                {
+                    "TIME": "10:15 - 11:45",
+                    "HALL ROOM": "Kimble NGO\r\nAgile Tour Da Nang\r\n...\r\nDoi Pham\r\nAgile Tour Hanoi\r\nHow to start your agile journey",
+                    "WORKSHOP 1": "Stephen Norrvall & Terry Haayema\r\nAgile Tour Sidney\r\nChange your language, change your thinking"
+                },
+                {
+                    "TIME": "11:45 - 13:00",
+                    "HALL ROOM": "LUNCH TIME AND NETWORKING"
+                },
+                {
+                    "TIME": "13:00 - 15:30",
+                    "HALL ROOM": "Cedric MAINGUY\r\nAgile Tour Singapore\r\n...\r\nTo Come\r\nAgile Tour Osaka\r\n...",
+                    "WORKSHOP 1": "Pierre E. Neis\r\nAgile Tour Beirut\r\nAgile Culture and Organisational Shift"
+                },
+                {
+                    "TIME": "15:30 - 15:45",
+                    "HALL ROOM": "TEA BREAK AND NETWORKING"
+                },
+                {
+                    "TIME": "15:45 - 17:15",
+                    "HALL ROOM": "To come\r\nAgile Tour Bangkok\r\n...\r\nTo Come\r\nAgile Tour Pune\r\n...",
+                    "WORKSHOP 1": "To come\r\nAgile Tour Paris\r\n..."
+                },
+                {
+                    "TIME": "17:15 - 17:30",
+                    "HALL ROOM": "CLOSING PLENARY"
+                },
+                {
+                    "TIME": "17:30 - 21:00",
+                    "BEACH": "BBQ & BDAY PARTY"
+                }
+
+            ]
+        }
+
+        function renderAgenda(place) {
+            var $container = $('[data-place="' + place + '"]');
+            // Clear container
+            $container.empty();
+
+            // each agendaData item is a time point
+            $.each(agendaData[place], function (index, item) {
+                var $tmpAgendaItem = $($('#tmpAgendaItem').html().trim());
+
+                // Write: time
+                $tmpAgendaItem.find('.time').html(item['TIME']);
+
+                // each item here is a room
+                var roomCount = Object.keys(item).length;
+                for (var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
+                    var $tmpColumn = $('<div/>', {'class': 'event-column-dn'});
+                    var key = Object.keys(item)[roomIndex],
+                        val = item[key].split('\r\n');
+
+                    // each valItem is a text line in cells (include speaker name & topic)
+                    $.each(val, function (valIndex, valItem) {
+                        if (valItem != undefined) {
+                            var $topicItem;
+                            switch (valIndex % 4) {
+                                case 0:
+                                    $topicItem = $('<h3/>', {
+                                        'class': 'topic-heading',
+                                        'html': valItem
+                                    });
+                                    break;
+                                case 1:
+                                    $topicItem = $('<div/>', {
+                                        'class': 'topic-title',
+                                        'html': valItem
+                                    });
+                                    break;
+                                case 2:
+                                    $topicItem = $('<div/>', {
+                                        'class': 'topic-title',
+                                        'html': valItem
+                                    });
+                                    break;
+                                case 3:
+                                    $topicItem = $('<br/>');
+                                    break;
+                            }
+                            $tmpColumn.append($topicItem);
+                        }
+                        // // Heading
+                        // if (val[0] != undefined)
+                        //   $tmpColumn.find('.topic-heading').html(val[0]);
+                        // // Topic name
+                        // if (val[1] != undefined)
+                        //   $tmpColumn.find('.topic-title').html(val[1]);
+                    });
+
+                    $tmpAgendaItem.find('.description').append($tmpColumn);
+                }
+                $container.append($tmpAgendaItem);
+            });
+        }
   //renderAgenda('saigon');
   renderAgenda('danang');
   //renderAgenda('hanoi');
@@ -452,7 +624,7 @@ function renderAgenda(place) {
 	function init_map() {
     var myOptions = {
         zoom: 14,
-        center: new google.maps.LatLng(16.0746392,108.2229065), //change the coordinates
+        center: new google.maps.LatLng(16.0386529,108.2497546), //change the coordinates
         mapTypeId: google.maps.MapTypeId.ROADMAP,
 		scrollwheel: false,
 		styles: [{featureType:'all',stylers:[{saturation:-100},{gamma:0.50}]}]
@@ -460,7 +632,7 @@ function renderAgenda(place) {
     map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
     marker = new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(16.0746392,108.2229065) //change the coordinates
+        position: new google.maps.LatLng(16.0386529,108.2497546) //change the coordinates
     });
     infowindow = new google.maps.InfoWindow({
         content: "<b>Agile{Tour}World</b>, Danang City, Vietnam. "  //add your address
