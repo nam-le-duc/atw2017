@@ -326,6 +326,146 @@ $(window).load(function() {
         }
 
 
+<<<<<<< HEAD
+		var agendaData = {
+  "danang": [
+    {
+      "TIME": "7:00 - 8:00",
+      "HALL ROOM": "REGISTRATION & COFFEE TIME"
+    },
+    {
+      "TIME": "8:00 - 8:15",
+      "HALL ROOM": "OPENING PLENARY"
+    },
+    {
+      "TIME": "8:15 - 8:30",
+      "HALL ROOM": "REMOTE CALL AND TEA BREAK"
+    },
+    {
+      "TIME": "8:30 - 10:00",
+      "HALL ROOM": "TOPIC\r\nSPEAKER\r\nby Kiro Harada\r\nAgile Tour Osaka\r\n\r\n\r\nAre You Killing Mr. Jenkins?\r\nQuang Nguyen\r\nbyTai Huynh\r\nAgile Tour HCMC",
+      "WORKSHOP1": "Storytelling' as a transformation tool\r\nEric LARAMÉE\r\nby Martin Goyette\r\nAgile Tour Montreal\r\n"
+    },
+    {
+      "TIME": "10:00 - 10:15",
+      "HALL ROOM": "REMOTE CALL"
+    },
+    {
+      "TIME": "10:15 - 11:45",
+      "HALL ROOM": "TOPIC\r\nKimble NGO\r\nby Alexandre Cuva\r\nAgile Tour Da Nang\r\n\r\n\r\nHow to start your agile journey\r\nDoi Pham\r\nby himself\r\nAgile Tour Hanoi",
+      "WORKSHOP1": "Change your language, change your thinking\r\nStephen Norrvall & Terry Haayema\r\nby Jeremie Benazra\r\nAgile Tour Sydney\r\n"
+    },
+    {
+      "TIME": "11:45 - 13:00",
+      "HALL ROOM": "LUNCH TIME AND NETWORKING"
+    },
+    {
+      "TIME": "13:00 - 15:30",
+      "HALL ROOM": "TOPIC\r\nCedric MAINGUY\r\nby Sylvain MAHE\r\nAgile Tour Singapore\r\n\r\n\r\nTOPIC\r\nSPEAKER\r\nby ORGA\r\nAgile Tour CITY",
+      "WORKSHOP1": "Agile Culture and Organisational Shift\r\nPierre E. Neis\r\nby Hervouet PIERRE\r\nAgile Tour Beirut\r\n"
+    },
+    {
+      "TIME": "15:30 - 15:45",
+      "HALL ROOM": "TEA BREAK AND NETWORKING"
+    },
+    {
+      "TIME": "15:45 - 17:15",
+      "HALL ROOM": "TOPIC\r\nSPEAKER\r\nby Kulawat Wonsaroj\r\nAgile Tour Bangkok\r\n\r\n\r\nTOPIC\r\nSPEAKER\r\nby Madhur KATHURIA\r\nAgile Tour Pune",
+      "WORKSHOP1": "Agile Innovation with JTBD\r\nRicardo TOME\r\nby Patrice PETIT\r\nAgile Tour Paris\r\n"
+    },
+    {
+      "TIME": "17:15 - 17:30",
+      "HALL ROOM": "CLOSING PLENARY"
+    },
+    {
+      "TIME": "17:30 - 21:00",
+      "HALL ROOM": "BBQ & BDAY PARTY"
+    }
+  ]
+};
+
+
+ // function renderAgenda(place) {
+ //  	var $container = $('[data-place="' + place + '"]');
+ //  	$container.empty();
+ //  	$.each(agendaData[place], function(index, item) {
+ //  		var $tmpAgendaItem = $($('#tmpAgendaItem').html().trim());
+ //  		$tmpAgendaItem.find('.time').html(item['TIME']);
+
+ //  		// Columns
+ //  		var roomCount = Object.keys(item).length;
+ //  		for(var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
+ //  			var $tmpColumn = $($('#tmpAgendaColumn').html().trim()),
+ //  				key = Object.keys(item)[roomIndex],
+ //  				val = item[key].split('\r\n');
+  			
+ //  			// Heading
+ //  			if (val[0] != undefined)
+ //  				$tmpColumn.find('.topic-heading').html(val[0]);
+ //  			// Topic name
+ //  			if (val[1] != undefined)
+ //  				$tmpColumn.find('.topic-title').html(val[1]);
+ //  			$tmpAgendaItem.find('.description').append($tmpColumn);
+ //  		}
+ //  		// console.log(Object.keys(item).length);
+ //  		// console.log('-----------');
+ //  		$container.append($tmpAgendaItem);
+ //  	});
+ //  }
+
+
+function renderAgenda(place) {
+    var $container = $('[data-place="' + place + '"]');
+    $container.empty();
+    $.each(agendaData[place], function(index, item) {
+      var $tmpAgendaItem = $($('#tmpAgendaItem').html().trim());
+      $tmpAgendaItem.find('.time').html(item['TIME']);
+      console.log('****************************************************')
+      // Columns
+      var roomCount = Object.keys(item).length;
+      for(var roomIndex = 1; roomIndex < roomCount; roomIndex++) {
+        var $tmpColumn = $($('#tmpAgendaColumn').html().trim()),
+          key = Object.keys(item)[roomIndex],
+          val = item[key].split('\r\n\r\n\r\n');
+          console.log('------------------------------ ROOM' + roomIndex);
+
+          for(var subIndex = 0; subIndex < val.length ; subIndex++){
+          	if(val[subIndex] != undefined){
+                subVal = val[subIndex].split('\r\n');
+                console.log('++++subVal');
+		        console.log(subVal);
+		        console.log('========================');
+		        var topic = "";
+		        var speaker = "";
+		        var des = "";
+				var $tmpColumn = $($('#tmpAgendaColumn').html().trim());
+          	 	for(var keyIndex = 0; keyIndex < subVal.length; keyIndex++){
+          	 		console.log("ROOM " + roomIndex, "keyIndex " + keyIndex);
+			        // Heading
+			        if (keyIndex == 0 && subVal[keyIndex] != undefined)
+			        	topic = subVal[keyIndex];
+			        // Topic name
+			        else 
+			        	speaker+='<p>'+ subVal[keyIndex] +'</p>';
+	      			// console.log(val[keyIndex]);
+          	  	}
+			    $tmpColumn.find('.topic-heading').html(topic);
+			    $tmpColumn.find('.topic-title').html(speaker);
+			    console.log( $tmpColumn.html());
+	        	$tmpAgendaItem.find('.description').append($tmpColumn);
+          	}
+          }
+        console.log($tmpAgendaItem);
+      }
+      // console.log(Object.keys(item).length);
+      // console.log('-----------');
+      if(roomCount > 2){
+      	$tmpAgendaItem.addClass("double-room");
+      }
+      $container.append($tmpAgendaItem);
+    });
+  }
+=======
         // ADD SPEAKER
 
         $(function () {
@@ -482,6 +622,7 @@ $(window).load(function() {
 
             ]
         }
+>>>>>>> cb70228df76a4f83033fcbfa8e8bb1df82a59850
 
         function renderAgenda(place) {
             var $container = $('[data-place="' + place + '"]');
