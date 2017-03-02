@@ -475,6 +475,14 @@ img.img-responsive{
 .column-one-three .event .description.room-no .event-column-dn:not(:only-child) {
 	width: 33%;
 }
+.event .event-column-dn:not(:only-child) {
+    border-right: 2px solid #fff;
+}
+.event .event-column-dn:last-child {
+	border-right: 0px solid #fff;
+}
+
+
 .event .description.room-no.no-bg div{
 	position:relative;
 }
@@ -512,11 +520,15 @@ img.img-responsive{
 	font-family:'sinkin_sans600_semibold';
 	font-size:14px;
 }
+.event .topic-title {
+    padding-left: 15px;
+}
 .topic-title {
-	color:#666 !important;
-	font-size:12px !important;
-	font-weight:normal;
-	text-transform: capitalize;
+    color: #666 !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: capitalize;
 }
 .topic-title span{
 	text-transform: lowercase;
@@ -548,10 +560,6 @@ img.img-responsive{
 }
 
 
-.column-one-two .event .description.room-no .event-column-dn:not(:only-child) {
-  width: 49.7%;
-}
-
 .event .description.room-no .event-column-dn .topic-title{
   padding-left: 15px;
 }
@@ -560,9 +568,6 @@ img.img-responsive{
   line-height: 28px;
 }
 
-.event.double-room .event-column-dn:nth-child(odd) {
-    border-right: 2px solid #fff;
-}
 
 
 

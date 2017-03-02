@@ -98,16 +98,16 @@ var speakers = {
     },
     paris : {
         id : "spk-paris",
-        img_src : "img/coming-soon.jpg",
+        img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAARHAAAAJGNjM2JmNDQ4LWM0NDgtNGMxZS05ZjU3LWQ4YWE2NGE1NDYyZQ.jpg",
         img_alt : "",
-        name : "To come",
-        spk_name : "To come",
-        position : "",
-        linkedin : "",
+        name : "Ricardo TOME",
+        spk_name : "Ricardo TOME",
+        position : "Lean Agile Coach",
+        linkedin : "https://www.linkedin.com/in/ricardotome/",
         spk_title : "Speaker<br>Agile Tour Paris 2016",
         original : "...",
-        topic : "Topic: TCS",
-        description	: ""
+        topic : "Topic: Agile Innovation with JTBD",
+        description	: "The journey from idea to customer value is usually very intense. The initial step of identifying what customers really want is key for success. In this workshop, you will work in teams to a product by practicing to “Jobs to be Done” techniques. These tools enable organisations to have a different level of collaboration and keep focus on achieving customer value.<br>Benefits for the attendees : Learn new pragmatic techniques to perform Agile innovation. Techniques learned: - Jobs to be Done - Jobs to be Done cards - Jobs to be Done maps - Jobs to be Done outcomes and constraints - Value Proposition Canvas - MVO (Minimum Viable Outcome)"
     },
     pune : {
         id : "spk-pune",
@@ -124,16 +124,29 @@ var speakers = {
     },
     sidney : {
         id : "spk-sidney",
-        img_src : "img/coming-soon.jpg",
+        img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAMOAAAAJGIyNjY3NGE2LTFjNjgtNDA2OC1iNjg1LTU4OGY3YmRkNThlYQ.jpg",
         img_alt : "",
-        name : "To come",
-        spk_name : "To come",
-        position : "",
-        linkedin : "",
+        name : "Stephan NORRVALL",
+        spk_name : "Stephan NORRVALL",
+        position : "Project Lead",
+        linkedin : "https://www.linkedin.com/in/stefannorrvall/",
         spk_title : "Speaker<br>Agile Tour Sidney 2016",
         original : "...",
-        topic : "Topic: TCS",
-        description	: ""
+        topic : "Topic: Change your language, change your thinking",
+        description	: "Hands on experience of using different metaphors to shape your thoughts and actions.<br>About Metaphors, language, change, complexity.<br>For anyone interested in understanding how language and metaphors can be used to shape thinking.<br>A set of different metaphors, including strengths and weaknesses of each to help see the world of work through a different set of perspectives.<br>Organisational thought has long been dominated by certain metaphors.<br>For example, we talk about organisations as if they were machines and expect them to operate as machines: in a routinised, efficient, reliable, and predictable way.<br>Or as cultures, full of peculiar beliefs, routines, and rituals.  While metaphors are central to the way we “read”, understand, and shape organisational life, there are no right or wrong ones, for every metaphor illuminates and hides.<br>This talk provides a way of coping with this paradox. It offers a way of thinking that is crucial for understanding, managing, and designing organisations in a changing world. "
+    },
+    sidney2 : {
+        id : "spk-sidney2",
+        img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/086/348/1ec8a06.jpg",
+        img_alt : "",
+        name : "Terry HAAYEMA",
+        spk_name : "Terry HAAYEMA",
+        position : "Agile Coach",
+        linkedin : "https://www.linkedin.com/in/doipa/",
+        spk_title : "Speaker<br>Agile Tour Sidney 2016",
+        original : "...",
+        topic : "Topic: Change your language, change your thinking",
+        description	: "Hands on experience of using different metaphors to shape your thoughts and actions.<br>About Metaphors, language, change, complexity.<br>For anyone interested in understanding how language and metaphors can be used to shape thinking.<br>A set of different metaphors, including strengths and weaknesses of each to help see the world of work through a different set of perspectives.<br>Organisational thought has long been dominated by certain metaphors.<br>For example, we talk about organisations as if they were machines and expect them to operate as machines: in a routinised, efficient, reliable, and predictable way.<br>Or as cultures, full of peculiar beliefs, routines, and rituals.  While metaphors are central to the way we “read”, understand, and shape organisational life, there are no right or wrong ones, for every metaphor illuminates and hides.<br>This talk provides a way of coping with this paradox. It offers a way of thinking that is crucial for understanding, managing, and designing organisations in a changing world. "
     },
     bangkok : {
         id : "spk-bangkok",
