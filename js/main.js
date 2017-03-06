@@ -328,7 +328,7 @@ $(window).load(function(){
             },
             {
                 "TIME": "13:00 - 15:30",
-                "HALL ROOM": "TOPIC[45']\r\nCedric MAINGUY<br>by Sylvain MAHE<br>Agile Tour Singapore\r\n\r\nTOPIC[45']\r\nSPEAKER<br>by ORGA<br>Agile Tour CITY",
+                "HALL ROOM": "TOPIC[45']\r\nCedric MAINGUY<br>by Sylvain MAHE<br>Agile Tour Singapore\r\n\r\nHow to pull an elephant ---- and 5 tips in organizational Agile transformation[45']\r\nAndy WANG<br>by Jacky SHEN<br>Agile Tour Tian Jin",
                 "WORKSHOP1": "Agile Culture and Organisational Shift\r\nPierre E. Neis<br>by Hervouet PIERRE<br>Agile Tour Beirut"
             },
             {
@@ -337,7 +337,7 @@ $(window).load(function(){
             },
             {
                 "TIME": "15:45 - 17:15",
-                "HALL ROOM": "TOPIC[45']\r\nSPEAKER<br>by Kulawat Wonsaroj<br>Agile Tour Bangkok\r\n\r\nTOPIC[45']\r\nSPEAKER<br>by Madhur KATHURIA<br>Agile Tour Pune",
+                "HALL ROOM": "TOPIC[45']\r\nSPEAKER<br>by Kulawat Wonsaroj<br>Agile Tour Bangkok\r\n\r\nSelf-Organizing team is a \"by-product[45']\"\r\nPhilip WANG<br>by Liao Yuan Zhang<br>Agile Tour Hangzhou",
                 "WORKSHOP1": "Agile Innovation with JTBD\r\nRicardo TOME<br>by Patrice PETIT<br>Agile Tour Paris"
             },
             {
