@@ -109,19 +109,6 @@ var speakers = {
         topic : "Topic: Agile Innovation with JTBD",
         description	: "The journey from idea to customer value is usually very intense. The initial step of identifying what customers really want is key for success. In this workshop, you will work in teams to a product by practicing to “Jobs to be Done” techniques. These tools enable organisations to have a different level of collaboration and keep focus on achieving customer value.<br>Benefits for the attendees : Learn new pragmatic techniques to perform Agile innovation. Techniques learned: - Jobs to be Done - Jobs to be Done cards - Jobs to be Done maps - Jobs to be Done outcomes and constraints - Value Proposition Canvas - MVO (Minimum Viable Outcome)"
     },
-    pune : {
-        id : "spk-pune",
-        img_src : "img/coming-soon.jpg",
-        img_alt : "",
-        name : "To come",
-        spk_name : "To come",
-        position : "",
-        linkedin : "",
-        spk_title : "Speaker<br>Agile Tour Pune 2016",
-        original : "...",
-        topic : "Topic: TCS",
-        description	: ""
-    },
     sidney : {
         id : "spk-sidney",
         img_src : "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAMOAAAAJGIyNjY3NGE2LTFjNjgtNDA2OC1iNjg1LTU4OGY3YmRkNThlYQ.jpg",
@@ -185,7 +172,7 @@ var speakers = {
         spk_title : "Independent Consulting<br>Agile Tour Hangzhou 2016",
         original : "...",
         topic : "Topic: Self-Organizing team is a \"by-product\"",
-        description	: "<ol><li>According to the research \“Conditions for Self-Organizing in Human Systems\” done by Glenda H. Eoyang, container, difference, and exchange are the conditions that shape the path of the self-organizing processes. Self-organizing is the process that moves from one state of coherence to another.<br>The CDE Model provides a simple and generalizable framework to describe the emergent behavior of human collectives.</li><li>Self-Organizing team lives in an environment, interacts with the environment. contextual support for self-organising teams consists basically of four sub-systems:<ul>information – in terms of providing teams the data that members need to competently plan and execute their work</ul><ul>infrastructure – in terms of appropriate physical space (a factor many co-located teams struggle with), technical infrastructure and money.</ul><ul>education – in terms of any training, coaching or technical assistance the team may need</ul><ul>reward – in terms of providing positive, economic as well as symbolic consequences for good team performance.</ul>As a leader or manager, you could cultivate the team by changing those sub-systems over the time.</li><li>The most important factor for a Self-Organizing team, is to have a compelling mission or vision. Once the team has the authority to set their goal and decide how to process towards the goal, with some support, Self-Organizing is just a \"by-product\" of actualizing the goal.</li></ol>"
+        description	: "<ol><li>According to the research \“Conditions for Self-Organizing in Human Systems\” done by Glenda H. Eoyang, container, difference, and exchange are the conditions that shape the path of the self-organizing processes. Self-organizing is the process that moves from one state of coherence to another.<br>The CDE Model provides a simple and generalizable framework to describe the emergent behavior of human collectives.</li><li>Self-Organizing team lives in an environment, interacts with the environment. contextual support for self-organising teams consists basically of four sub-systems:<ul stype=\"list-style-type:circle\"><li>information – in terms of providing teams the data that members need to competently plan and execute their work</li><li>infrastructure – in terms of appropriate physical space (a factor many co-located teams struggle with), technical infrastructure and money.</li><li>education – in terms of any training, coaching or technical assistance the team may need</li><li>reward – in terms of providing positive, economic as well as symbolic consequences for good team performance.</li></ul>As a leader or manager, you could cultivate the team by changing those sub-systems over the time.</li><li>The most important factor for a Self-Organizing team, is to have a compelling mission or vision. Once the team has the authority to set their goal and decide how to process towards the goal, with some support, Self-Organizing is just a \"by-product\" of actualizing the goal.</li></ol>"
     }
 
 
