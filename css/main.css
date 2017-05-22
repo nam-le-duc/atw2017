@@ -674,6 +674,12 @@ img.img-responsive{
 	font-size:20px;
 }
 
+.sponsor-slider img.img-responsive{
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
 
 /* SUBSCRIBE */
 
