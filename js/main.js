@@ -247,7 +247,7 @@ $(window).load(function(){
 
                 console.log(speaker['img_src']);
                 if(key == 'img_src'){
-                    $("#speaker_" + key).attr('src',speaker[key] || '');
+                    $("#speaker_" + key).attr('src',speaker[key] || '/img/coming-soon.jpg');
                 }else if(key == 'img_alt'){
                     $("#speaker_" + key).attr('alt',speaker[key] || '');
                 }else if(key == 'original'){
@@ -301,52 +301,52 @@ $(window).load(function(){
                 "HALL ROOM": "REGISTRATION & COFFEE TIME"
             },
             {
-                "TIME": "8:00 - 8:15",
+                "TIME": "8:00 - 8:30",
                 "HALL ROOM": "OPENING PLENARY"
             },
             {
-                "TIME": "8:15 - 8:30",
-                "HALL ROOM": "REMOTE CALL AND TEA BREAK"
-            },
-            {
-                "TIME": "8:30 - 10:00",
-                "HALL ROOM": "TOPIC[45']\r\nSPEAKER<br>by Kiro Harada<br>Agile Tour Osaka\r\n\r\nAre You Killing Mr. Jenkins?[45']\r\nQuang Nguyen<br>by Tai Huynh<br>Agile Tour HCMC",
-                "WORKSHOP1": "Storytelling' as a transformation tool\r\nEric LARAMÉE<br>by Martin Goyette<br>Agile Tour Montreal"
-            },
-            {
-                "TIME": "10:00 - 10:15",
-                "HALL ROOM": "REMOTE CALL"
-            },
-            {
-                "TIME": "10:15 - 11:45",
-                "HALL ROOM": "TOPIC[45']\r\nKimble NGO<br>by Alexandre Cuva<br>Agile Tour Da Nang\r\n\r\nHow to start your agile journey[45']\r\nDoi Pham<br>by himself<br>Agile Tour Hanoi",
-                "WORKSHOP1": "Change your language, change your thinking\r\nStephen Norrvall & Terry Haayema<br>by Jeremie Benazra<br>Agile Tour Sydney"
-            },
-            {
-                "TIME": "11:45 - 13:00",
-                "HALL ROOM": "LUNCH TIME AND NETWORKING"
-            },
-            {
-                "TIME": "13:00 - 15:30",
-                "HALL ROOM": "TOPIC[45']\r\nCedric MAINGUY<br>by Sylvain MAHE<br>Agile Tour Singapore\r\n\r\nHow to pull an elephant ---- and 5 tips in organizational Agile transformation[45']\r\nAndy WANG<br>by Jacky SHEN<br>Agile Tour Tian Jin",
-                "WORKSHOP1": "Agile Culture and Organisational Shift\r\nPierre E. Neis<br>by Hervouet PIERRE<br>Agile Tour Beirut"
-            },
-            {
-                "TIME": "15:30 - 15:45",
+                "TIME": "8:30 - 8:45",
                 "HALL ROOM": "TEA BREAK AND NETWORKING"
             },
             {
-                "TIME": "15:45 - 17:15",
-                "HALL ROOM": "TOPIC[45']\r\nSPEAKER<br>by Kulawat Wonsaroj<br>Agile Tour Bangkok\r\n\r\nSelf-Organizing team is a \"by-product[45']\"\r\nPhilip WANG<br>by Liao Yuan Zhang<br>Agile Tour Hangzhou",
-                "WORKSHOP1": "Agile Innovation with JTBD\r\nRicardo TOME<br>by Patrice PETIT<br>Agile Tour Paris"
+                "TIME": "8:45 - 10:15",
+                "HALL ROOM": "Self-Organizing team is a \"by-product[45']\"\r\nPhilip WANG<br>by Liao Yuan Zhang<br>Agile Tour Hangzhou\r\n\r\nAre You Killing Mr. Jenkins?[45']\r\nQuang Nguyen<br>by Tai Huynh<br>Agile Tour HCMC",
+                "WORKSHOP1": "Storytelling' as a transformation tool[90']\r\nEric LARAMÉE<br>by Martin Goyette<br>Agile Tour Montreal"
             },
             {
-                "TIME": "17:15 - 17:30",
+                "TIME": "10:15 - 10:30",
+                "HALL ROOM": "TEA BREAK AND NETWORKING"
+            },
+            {
+                "TIME": "10:30 - 12:00",
+                "HALL ROOM": "How to start your agile journey[45']\r\nDoi Pham<br>by himself<br>Agile Tour Hanoi\r\n\r\nMaking Design Thinking, Lean, and Agile works together[45']\r\nPete CHEMSRIBOURG<br>by Kulawat Wonsaroj<br>Agile Tour Bangkok",
+                "WORKSHOP1": "Agility is Unsetling[60']\r\nPedro Pimentel<br>by Steven Mak<br>Agile Tour Hong Kong"
+            },
+            {
+                "TIME": "12:00 - 13:30",
+                "HALL ROOM": "LUNCH TIME AND NETWORKING"
+            },
+            {
+                "TIME": "13:30 - 15:00",
+                "HALL ROOM": "We don't speak our Customers language[45']\r\nKimble NGO<br>by Alexandre Cuva<br>Agile Tour Da Nang\r\n\r\nHow to pull an elephant ---- and 5 tips in organizational Agile transformation[45']\r\nAndy WANG<br>by Jacky SHEN<br>Agile Tour Tian Jin",
+                "WORKSHOP1": "Agile Culture and Organisational Shift[90']\r\nPierre E. Neis<br>by Hervouet PIERRE<br>Agile Tour Beirut"
+            },
+            {
+                "TIME": "15:00 - 15:15",
+                "HALL ROOM": "TEA BREAK AND NETWORKING"
+            },
+            {
+                "TIME": "15:15 - 16:45",
+                "HALL ROOM": "Creativity, Lateral Thinking and Innovation Games[90']\r\nArnaud CHARPENTIER<br>by Patrice PETIT<br>Agile Tour Paris",
+                "WORKSHOP1": "Beyond Agile: Designing a sensible post-agile approach to innovation[90']\r\nCedric MAINGUY<br>by Sylvain MAHE<br>Agile Tour Singapore"
+            },
+            {
+                "TIME": "16:45 - 17:30",
                 "HALL ROOM": "CLOSING PLENARY"
             },
             {
                 "TIME": "17:30 - 21:00",
-                "HALL ROOM": "BBQ & BDAY PARTY"
+                "HALL ROOM": "BDAY PARTY"
             }
         ]
     };
@@ -542,7 +542,7 @@ var newsletter_send = function(){
 function init_map() {
     var myOptions = {
         zoom: 14,
-        center: new google.maps.LatLng(16.0386529,108.2497546), //change the coordinates
+        center: new google.maps.LatLng(16.049763, 108.248655), //change the coordinates
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false,
         styles: [{featureType:'all',stylers:[{saturation:-100},{gamma:0.50}]}]
@@ -550,10 +550,10 @@ function init_map() {
     map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
     marker = new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(16.0386529,108.2497546) //change the coordinates
+        position: new google.maps.LatLng(16.049763, 108.248655) //change the coordinates
     });
     infowindow = new google.maps.InfoWindow({
-        content: "<b>Agile{Tour}World</b>, Furama Ressort, Danang City, Vietnam. "  //add your address
+        content: "<b>Agile{Tour}World</b>, Holiday Beach Venue Hotel, Danang City, Vietnam. "  //add your address
     });
     google.maps.event.addListener(marker, "click", function () {
         infowindow.open(map, marker);
